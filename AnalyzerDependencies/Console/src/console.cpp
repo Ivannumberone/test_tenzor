@@ -53,7 +53,7 @@ int main(int arg,char** args)
     args = n_argv;
     if (!ValidateArgs(arg,args))
         return EXIT_FAILURE;
-    Analyzer* analyzer = new Analyzer();
+    Analyzer analyzer = Analyzer();
     auto start_folder = path(args[1]);
     auto libs_folders = vector<path>();
     for (int i = 1; i < arg;i++)
