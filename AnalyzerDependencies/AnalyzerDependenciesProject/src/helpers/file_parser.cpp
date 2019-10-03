@@ -40,7 +40,6 @@ namespace helpers {
         auto result = vector<shared_ptr<IncludedFile>>();
         if (!exists(target->getAbsolutePath()) || !is_regular_file(target->getAbsolutePath()))
             return result;
-        auto tttt = target->getAbsolutePath().extension().string();
         if (!regex_search(target->getAbsolutePath().extension().wstring().data(),rgx_cpp_h_file))
             return result;
         wstring code = LoadFile(target->getAbsolutePath().wstring());
